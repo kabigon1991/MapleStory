@@ -7,13 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GoogleMaps/GoogleMaps.h>
 
-@class ViewController;
+@class HomeViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+{
+    UINavigationController *navigationController;
+}
+
+@property (readonly) UINavigationController *navigationController;
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) ViewController *viewController;
+@property (strong, nonatomic) HomeViewController *viewController;
 
 @end

@@ -1,0 +1,49 @@
+10
+
+dir
+0
+http://192.168.0.252:81/svn/ibahn_app/trunk/MapleStory/MapleStory/en.lproj
+http://192.168.0.252:81/svn/ibahn_app
+add
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+acb103e6-8aa9-2d49-95f8-23e7a2498719
+
+InfoPlist.strings
+file
+
+
+
+add
+
+ViewController_iPhone.xib
+file
+
+
+
+add
+
+ViewController_iPad.xib
+file
+
+
+
+add
+

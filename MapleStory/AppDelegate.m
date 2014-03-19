@@ -9,20 +9,39 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
+#import "HomeViewController.h"
 
 @implementation AppDelegate
+@synthesize navigationController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //  Google Map
+    [GMSServices provideAPIKey:kGOOGLE_API_KEY];
+    
+    //  create folder ImageServiceType to contain image ServiceType
+    NSString *path = [Common documentsPathForFileName:[NSString stringWithFormat:@"/%@",kFolderImageServiceType]];
+    [Common createFolderWithPath:path];
+    
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
+        self.viewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
     } else {
-        self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
+        self.viewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
     }
-    self.window.rootViewController = self.viewController;
+    
+    navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    //navigationController.navigationBar.hidden = YES;
+
+    
+    self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
+    
+    
+    
+    
     return YES;
 }
 
@@ -52,5 +71,8 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+
 
 @end
